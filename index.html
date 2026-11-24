@@ -72,7 +72,7 @@ nav.top a:hover,nav.top a:focus-visible{background:color-mix(in srgb,var(--leaf)
 .readout b{display:block;font:700 28px Unbounded,Inter,sans-serif;color:var(--cu);white-space:nowrap}
 .cap3d{position:absolute;top:14px;left:14px;z-index:3;max-width:min(340px,58%);background:var(--glass);border-radius:14px;padding:10px 14px;font-size:14px;color:var(--ink);border:1px solid var(--line);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
 .cap3d strong{color:var(--leaf)}
-.hint{position:absolute;left:50%;top:14px;transform:translateX(-50%);z-index:3;font-size:13px;font-weight:600;color:var(--mut);background:var(--glass);border-radius:999px;padding:4px 12px;border:1px solid var(--line);white-space:nowrap}
+.hint{position:absolute;left:50%;bottom:68px;transform:translateX(-50%);z-index:3;font-size:13px;font-weight:600;color:var(--mut);background:var(--glass);border-radius:999px;padding:4px 12px;border:1px solid var(--line);white-space:nowrap}
 /* grids */
 .g2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
 .g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
@@ -138,7 +138,7 @@ svg text{font-family:Inter,sans-serif;font-size:13px;fill:var(--mut)}
 .l1 i{background:radial-gradient(circle at 30% 40%,#3b2a1c 0 2px,transparent 3px) 0 0/14px 14px,#24180f}.l1 .sd,.l1 .sr{background:#1a110a}
 .l2 i,.l4 i{background:repeating-linear-gradient(0deg,rgba(255,255,255,.22) 0 1px,transparent 1px 12px),repeating-linear-gradient(90deg,rgba(255,255,255,.22) 0 1px,transparent 1px 12px),#333}.l2 .sd,.l2 .sr,.l4 .sd,.l4 .sr{background:#222}
 .l3 i{background:radial-gradient(circle,#7ee36a 0 3px,transparent 4px) 0 0/26px 22px,radial-gradient(circle,#ffb347 0 2px,transparent 3px) 9px 7px/31px 27px,#4a3423}.l3 .sd,.l3 .sr{background:#33241a}
-.plant{position:absolute;left:75px;top:-130px;width:90px;height:220px;transform-origin:bottom center;transform:rotateX(-90deg) rotateY(var(--prz,38deg));pointer-events:none}
+.plant{position:absolute;left:75px;top:-130px;width:90px;height:220px;transform-origin:bottom center;transform:rotateX(-90deg) rotateY(var(--prz,-38deg));pointer-events:none}
 .stk .ltag{position:absolute;font-size:13px;font-weight:600;background:var(--glass);border:1px solid var(--line);border-radius:8px;padding:3px 8px;white-space:nowrap;color:var(--ink);z-index:2}
 .legend{display:grid;gap:10px}
 .legend div{display:flex;gap:12px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px;cursor:pointer}
@@ -210,7 +210,25 @@ footer a{color:#f1fff0}
 @media(max-width:600px){.chain,.g4{grid-template-columns:minmax(0,1fr)}.tl .row{grid-template-columns:minmax(0,1fr);gap:4px}table{font-size:13px}th,td{padding:6px 4px}.stack thead{display:none}.stack tr{display:grid;padding-block:10px;border-bottom:1px solid var(--line)}.stack td{display:grid;grid-template-columns:7.5em minmax(0,1fr);gap:8px;border:0;padding:3px 0}.stack td::before{content:attr(data-l);font-weight:600;color:var(--mut)}.stagebox{height:470px}.seg button{padding:8px 9px;font-size:13px}.stk{height:360px}.rig{transform:scale(.78) rotateX(var(--rx,60deg)) rotateZ(var(--rz,-38deg))}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.led.blink{animation:none;background:#ff3b30}.tilt,.term .fl,.ly{transition:none}}
 .aih{display:flex;gap:12px;align-items:center;margin-bottom:10px}.aib{width:42px;height:42px;border-radius:12px;color:#fff;font:700 20px Unbounded,Inter,sans-serif;display:grid;place-items:center;flex:none}.ait p{margin-bottom:8px}
+.wall{position:absolute;background:linear-gradient(180deg,rgba(200,235,255,.10),rgba(200,235,255,.28));border:2px solid rgba(255,255,255,.75);pointer-events:none;--H:calc(var(--g,34px)*3.6 + 70px)}
+.wf{left:-124px;top:calc(94px - var(--H));width:248px;height:var(--H);transform-origin:bottom;transform:translateZ(calc(var(--g,34px)*-.5)) rotateX(-90deg)}
+.wb{left:-124px;top:calc(-94px - var(--H));width:248px;height:var(--H);transform-origin:bottom;transform:translateZ(calc(var(--g,34px)*-.5)) rotateX(-90deg)}
+.wl{left:calc(-124px - var(--H));top:-94px;width:var(--H);height:188px;transform-origin:right;transform:translateZ(calc(var(--g,34px)*-.5)) rotateY(90deg)}
+.wr{left:124px;top:-94px;width:var(--H);height:188px;transform-origin:left;transform:translateZ(calc(var(--g,34px)*-.5)) rotateY(-90deg)}
+.pstk .rig{top:60%;transform:scale(1.2) rotateX(var(--rx,60deg)) rotateZ(var(--rz,-38deg))}
+@media(max-width:600px){.pstk .rig{transform:scale(.72) rotateX(var(--rx,60deg)) rotateZ(var(--rz,-38deg))}}
+.pground{left:-210px!important;top:-130px!important;width:420px!important;height:260px!important}
+.pground i{background:linear-gradient(180deg,#58b947 0 22%,#5aa7d6 22% 46%,#58b947 46% 62%,#d9c7a3 62% 78%,#58b947 78%)!important}
+.pground .sd,.pground .sr{background:linear-gradient(180deg,#3a2a1c,#24180f)!important}
+.pground .sd{background:repeating-linear-gradient(90deg,#3a2a1c 0 60px,#2c2c2c 60px 104px,#3a2a1c 104px 110px)!important}
+.bb{position:absolute;transform-origin:bottom center;transform:rotateX(-90deg) rotateY(var(--prz,-38deg));pointer-events:none}
+.bb svg{width:100%;height:100%;display:block}
+.pled,.pglow{opacity:0;transition:opacity .4s}
+.night .pled{opacity:1}.night .pglow{opacity:.35;animation:pg 2s ease-in-out infinite}
+@keyframes pg{50%{opacity:.6}}
+#errbar{position:fixed;left:8px;right:8px;bottom:8px;z-index:200;background:#b00020;color:#fff;font:13px/1.4 Inter,sans-serif;padding:8px 12px;border-radius:10px;display:none}
 </style>
+<script>window.addEventListener("error",function(e){var b=document.getElementById("errbar");if(!b){b=document.createElement("div");b.id="errbar";(document.body||document.documentElement).appendChild(b)}b.style.display="block";b.textContent="Қате: "+(e.message||"")+" ("+(e.lineno||"")+")"});</script>
 </head>
 <body>
 <canvas id="bg3d" aria-hidden="true"></canvas>
@@ -235,7 +253,7 @@ footer a{color:#f1fff0}
 <div class="stagebox" id="stagebox">
 <div id="stage" role="img" aria-label="Өсімдік-микробтық отын элементінің айналдырылатын 3D моделі"></div>
 <div id="labels"></div>
-<div class="hint">3D модель жүктелуде…</div>
+<div class="hint">Айналдыру үшін сүйре</div>
 <div class="cap3d" id="cap3d"><strong>4-қадам:</strong> толық тізбек. Электрондар анодтан сым арқылы мультиметр мен LED-ке, одан катодқа жүреді.</div>
 <div class="readout" aria-live="polite">Мультиметр<b id="rv">0.62 V</b><span id="ri">LED: бустер арқылы жыпылықтайды</span></div>
 <div class="stepbar">
@@ -824,8 +842,8 @@ if(matchMedia('(hover:hover) and (pointer:fine)').matches&&!RM){$$('.card,.subj,
 /* ---------- CSS 3D layer stack ---------- */
 const PLANT='<svg class="plant" viewBox="0 0 60 150" preserveAspectRatio="xMidYMax meet" aria-hidden="true"><path d="M30 150V20" stroke="#2e8b1f" stroke-width="4"/><path d="M30 40c18-14 28-6 28-6s-10 18-28 6zM30 70C12 56 2 64 2 64s10 18 28 6zM30 100c18-14 28-6 28-6s-10 18-28 6zM30 22C22 8 30 0 30 0s8 8 0 22z" fill="#3fae2a"/></svg>';
 const LAY=[['l0',-.5,4,'Мөлдір ыдыс түбі','rgba(190,230,255,.7)'],['l1',0,22,'Дымқыл қара топырақ · 2–3 см','#24180f'],['l2',1,5,'Анод (−) · көміртекті мата','#333'],['l3',2,34,'Топырақ, тамыр, бактериялар · 5–6 см','#4a3423'],['l4',3,5,'Катод (+) · көміртекті мата, ауамен жанасады','#3a3a3a']];
-function stackHTML(){return `<div class="rig">${LAY.map((l,i)=>`<div class="ly ${l[0]}" data-li="${i}" style="--i:${l[1]};--h:${l[2]}px"><i></i>${i?'<b class="sd"></b><b class="sr"></b>':''}${i===4?PLANT:''}</div>`).join('')}</div>`}
-function bindStack(box){const rig=box.querySelector('.rig');let rz=-38,rx=60,d=null;const ap=()=>{rig.style.setProperty('--rz',rz+'deg');rig.style.setProperty('--rx',rx+'deg');box.querySelectorAll('.plant').forEach(p=>p.style.setProperty('--prz',(-rz)+'deg'))};
+function stackHTML(){return `<div class="rig"><div class="wall wf"></div><div class="wall wb"></div><div class="wall wl"></div><div class="wall wr"></div>${LAY.map((l,i)=>`<div class="ly ${l[0]}" data-li="${i}" style="--i:${l[1]};--h:${l[2]}px"><i></i>${i?'<b class="sd"></b><b class="sr"></b>':''}${i===4?PLANT:''}</div>`).join('')}</div>`}
+function bindStack(box){const rig=box.querySelector('.rig');let rz=-38,rx=60,d=null;const ap=()=>{rig.style.setProperty('--rz',rz+'deg');rig.style.setProperty('--rx',rx+'deg');box.querySelectorAll('.plant,.bb').forEach(p=>p.style.setProperty('--prz',rz+'deg'))};
   box.addEventListener('pointerdown',e=>{d=[e.clientX,e.clientY,rz,rx];box.setPointerCapture(e.pointerId)});box.addEventListener('pointermove',e=>{if(!d)return;rz=d[2]+(e.clientX-d[0])*.4;rx=Math.max(20,Math.min(80,d[3]-(e.clientY-d[1])*.25));ap()});
   box.addEventListener('pointerup',()=>d=null);box.addEventListener('pointercancel',()=>d=null);ap();
   if(!RM){let a=0;const spin=()=>{if(!d&&box.dataset.spin!=='0'){rz+=.08;ap()}requestAnimationFrame(spin)};requestAnimationFrame(spin)}return rig}
@@ -838,11 +856,18 @@ window.__stack={stackHTML,bindStack};
 /* ---------- 3D park scene ---------- */
 {
 const host=$('#park'),pbox=$('#parkbox');let night=true;
-const setBg=()=>{pbox.style.background=night?'radial-gradient(80% 90% at 50% 20%,#1d3d5c,#0a1622 75%)':'radial-gradient(80% 90% at 50% 20%,#ffffff,#bfe9a4 75%)';$('#pN').setAttribute('aria-pressed',night);$('#pD').setAttribute('aria-pressed',!night)};
+const setBg=()=>{pbox.style.background=night?'radial-gradient(80% 90% at 50% 20%,#1d3d5c,#0a1622 75%)':'radial-gradient(80% 90% at 50% 20%,#ffffff,#bfe9a4 75%)';$('#pN').setAttribute('aria-pressed',night);$('#pD').setAttribute('aria-pressed',!night);pbox.classList.toggle('night',night)};
 let ok=false;try{const c=document.createElement('canvas');ok=!!(c.getContext('webgl')||c.getContext('experimental-webgl'))}catch(e){}
-window.__parkInit=function(){if(!window.THREE||!ok){const PSVG='<svg viewBox="0 0 800 450" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0;width:100%;height:100%" aria-hidden="true"><rect width="800" height="450" fill="#132a40"/><circle cx="660" cy="80" r="30" fill="#f4f1de"/><path d="M0 250 L800 210 L800 450 L0 450Z" fill="#3a2a1c"/><path d="M0 250 L800 210 L800 228 L0 270Z" fill="#58b947"/><path d="M120 246 L800 214 L800 222 L120 256Z" fill="#5aa7d6" opacity=".8"/><g stroke="#4f8f3a" stroke-width="3">'+Array.from({length:40},(_,i)=>{const x=130+i*16,y=250-i*0.8;return `<path d="M${x} ${y}V${y-60-(i*37%40)}"/>`}).join('')+'</g><g fill="#2c2c2c">'+[0,1,2,3].map(i=>`<rect x="${150+i*160}" y="${300-i*8}" width="130" height="10"/>`).join('')+'</g><path d="M0 300 L800 262 L800 276 L0 316Z" fill="#d9c7a3"/>'+[0,1,2,3,4,5].map(i=>{const x=60+i*130,y=300-i*6;return `<rect x="${x-3}" y="${y-48}" width="6" height="48" fill="#3d4a3f"/><circle cx="${x}" cy="${y-52}" r="20" fill="#ffd23f" opacity=".3"/><circle cx="${x}" cy="${y-52}" r="8" fill="#ffd23f"/>`}).join('')+'</svg>';
-host.innerHTML=PSVG;pbox.querySelector('.cap3d').innerHTML='<strong>Саябақ модулі:</strong> қамыс төсемі астындағы анодтар, бустер және жол бойындағы LED-маркерлер.';}
-else{try{
+const REED='<svg viewBox="0 0 40 120" preserveAspectRatio="xMidYMax meet"><g stroke="#4f8f3a" stroke-width="2.5" fill="none"><path d="M20 120V18M12 120Q10 60 6 28M28 120Q30 60 34 30M16 120Q15 70 13 40"/></g><g fill="#8a6a3c"><ellipse cx="20" cy="14" rx="3" ry="9"/><ellipse cx="6" cy="24" rx="2.5" ry="8"/><ellipse cx="34" cy="26" rx="2.5" ry="8"/></g></svg>';
+const POST='<svg viewBox="0 0 40 120" preserveAspectRatio="xMidYMax meet"><circle class="pglow" cx="20" cy="22" r="18" fill="#ffd23f" opacity=".35"/><rect x="18" y="30" width="4" height="90" fill="#3d4a3f"/><circle class="pled" cx="20" cy="22" r="8" fill="#ffd23f"/></svg>';
+const BOXC='<svg viewBox="0 0 60 60" preserveAspectRatio="xMidYMax meet"><rect x="5" y="10" width="50" height="50" rx="6" fill="#2b9a3a"/><text x="30" y="42" text-anchor="middle" font-size="14" fill="#fff" style="stroke:none">e⁻</text></svg>';
+function cssPark(){const items=[];for(let i=0;i<9;i++)items.push(`<div class="bb" style="left:${22+i*42}px;top:-40px;width:60px;height:130px">${REED}</div>`);for(let i=0;i<5;i++)items.push(`<div class="bb" style="left:${40+i*80}px;top:52px;width:56px;height:130px">${POST}</div>`);items.push(`<div class="bb" style="left:4px;top:72px;width:50px;height:50px">${BOXC}</div>`);
+  host.classList.add('stk','pstk');host.style.cssText='position:absolute;inset:0;border:0;border-radius:0;background:none;height:auto';
+  host.innerHTML=`<div class="rig"><div class="ly pground" style="--i:0;--h:56px"><i></i><b class="sd"></b><b class="sr"></b>${items.join('')}</div></div>`;window.__stack.bindStack(host)}
+cssPark();
+window.__parkInit=function(){if(!window.THREE||!ok){return}
+try{
+host.innerHTML='';host.classList.remove('stk','pstk');host.style.cssText='';$$('.plant').forEach(()=>{});
 const T=THREE,R=new T.WebGLRenderer({antialias:true,alpha:true});R.setPixelRatio(Math.min(devicePixelRatio,2));host.appendChild(R.domElement);
 const sc=new T.Scene(),cam=new T.PerspectiveCamera(34,1,.1,100);cam.position.set(0,3.6,12);cam.lookAt(0,-.2,0);
 const hemi=new T.HemisphereLight(0xffffff,0x2a3a1a,1),sun=new T.DirectionalLight(0xffffff,.9);sun.position.set(4,8,5);sc.add(hemi,sun);
@@ -873,7 +898,6 @@ host.addEventListener('pointermove',e=>{if(!drag)return;ry=drag[2]+(e.clientX-dr
 host.addEventListener('pointerup',()=>drag=null);host.addEventListener('pointercancel',()=>drag=null);
 const size=()=>{const w=host.clientWidth,h=host.clientHeight;if(!w||!h)return;R.setSize(w,h,false);cam.aspect=w/h;cam.position.z=w<600?17:12;cam.updateProjectionMatrix()};const pro=new ResizeObserver(size);pro.observe(host);size();
 const pio=new IntersectionObserver(es=>{vis=es[0].isIntersecting});pio.observe(host);
-$('#pN').addEventListener('click',()=>{night=true;setBg()});$('#pD').addEventListener('click',()=>{night=false;setBg()});
 let dead=false;
 function fr(now){if(dead)return;requestAnimationFrame(fr);const dt=Math.min(.05,(now-last)/1000);last=now;if(!vis)return;try{tm+=RM?0:dt;if(auto)ry+=dt*.12;root.rotation.set(rx,ry,0);
   for(let i=0;i<NR;i++){const p=rp[i],sw=Math.sin(tm*1.2+p[5])*.05;dm.position.set(p[0],p[2]/2+.05,p[1]);dm.rotation.set(p[4]+sw,0,p[3]+sw);dm.scale.set(1,p[2],1);dm.updateMatrix();reed.setMatrixAt(i,dm.matrix);
@@ -885,15 +909,18 @@ function fr(now){if(dead)return;requestAnimationFrame(fr);const dt=Math.min(.05,
   LB.forEach((l,i)=>{v3.set(...l[1]);root.localToWorld(v3);v3.project(cam);const e=lel[i];if(v3.z>1){e.style.opacity=0;return}e.style.opacity=1;e.style.transform=`translate(${Math.max(60,Math.min(w-60,(v3.x*.5+.5)*w)).toFixed(0)}px,${((-v3.y*.5+.5)*h).toFixed(0)}px) translate(-50%,-50%)`})
   }catch(err){dead=true;console.error(err)}}
 requestAnimationFrame(fr);
-}catch(err){console.error(err);pbox.querySelector('.cap3d').textContent='3D саябақ бұл құрылғыда ашылмады.'}}};
+}catch(err){console.error(err);pbox.querySelector('.cap3d').textContent='3D саябақ бұл құрылғыда ашылмады.'}};
 setBg();
+$('#pN').addEventListener('click',()=>{night=true;setBg()});$('#pD').addEventListener('click',()=>{night=false;setBg()});
 }
 
 /* ---------- 3D ---------- */
 const box=$('#stagebox'),host=$('#stage');
-function no3d(){box.classList.add('no3d');{const h=box.querySelector('.hint');if(h)h.remove();}host.innerHTML='';host.classList.add('stk');host.style.cssText='position:absolute;inset:0;border:0;border-radius:0;background:none;height:auto';host.innerHTML=window.__stack.stackHTML();window.__stack.bindStack(host);$('#labels').innerHTML='';const rg=host.querySelector('.rig');$$('[data-step]').forEach(b=>b.onclick=()=>{const k=+b.dataset.step;rg.querySelectorAll('.ly').forEach((l,i)=>{l.style.display=(k===1&&i>2)||(k===2&&i>3)?'none':''});$$('[data-step]').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'))});$('#bExp').onclick=e=>{const on=e.currentTarget.getAttribute('aria-pressed')!=='true';e.currentTarget.setAttribute('aria-pressed',on);rg.style.setProperty('--g',on?'64px':'34px')};$('#bRot').onclick=e=>{const on=host.dataset.spin==='0';host.dataset.spin=on?'1':'0';e.currentTarget.setAttribute('aria-pressed',on)};$('#cap3d').innerHTML='<strong>3D қабаттар моделі.</strong> Сүйреп айналдыр: түбінде топырақ, анод, тамырлы топырақ, бетінде катод пен өсімдік.'}
+function no3d(){box.classList.add('no3d');host.innerHTML='';host.classList.add('stk');host.style.cssText='position:absolute;inset:0;border:0;border-radius:0;background:none;height:auto';host.innerHTML=window.__stack.stackHTML();window.__stack.bindStack(host);$('#labels').innerHTML='';const rg=host.querySelector('.rig');$$('[data-step]').forEach(b=>b.onclick=()=>{const k=+b.dataset.step;rg.querySelectorAll('.ly').forEach((l,i)=>{l.style.display=(k===1&&i>2)||(k===2&&i>3)?'none':''});$$('[data-step]').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'))});$('#bExp').onclick=e=>{const on=e.currentTarget.getAttribute('aria-pressed')!=='true';e.currentTarget.setAttribute('aria-pressed',on);rg.style.setProperty('--g',on?'64px':'34px')};$('#bRot').onclick=e=>{const on=host.dataset.spin==='0';host.dataset.spin=on?'1':'0';e.currentTarget.setAttribute('aria-pressed',on)};$('#cap3d').innerHTML='<strong>3D қабаттар моделі.</strong> Сүйреп айналдыр: түбінде топырақ, анод, тамырлы топырақ, бетінде катод пен өсімдік.'}
 let gl3=null;try{const c=document.createElement('canvas');gl3=c.getContext('webgl')||c.getContext('experimental-webgl')}catch(e){}
-window.__heroInit=function(){if(!window.THREE||!gl3){no3d()}else{try{
+no3d();
+window.__heroInit=function(){if(!window.THREE||!gl3){return}else{try{
+host.innerHTML='';host.classList.remove('stk');host.style.cssText='';box.classList.remove('no3d');$$('[data-step]').forEach(b=>b.onclick=null);$('#bExp').onclick=null;$('#bRot').onclick=null;$('#bExp').setAttribute('aria-pressed','false');$('#bRot').setAttribute('aria-pressed','true');
 const T=THREE;
 const R=new T.WebGLRenderer({antialias:true,alpha:true});R.setPixelRatio(Math.min(devicePixelRatio,2));host.appendChild(R.domElement);
 const scene=new T.Scene(),cam=new T.PerspectiveCamera(32,1,.1,100);cam.position.set(0,0.6,10.5);cam.lookAt(0,0,0);
@@ -987,9 +1014,9 @@ let dead=false;function frame(now){if(dead)return;requestAnimationFrame(frame);t
 setStep(4);requestAnimationFrame(frame);
 }catch(err){no3d();console.error(err)}}
 };
-let done3=false;const go3=()=>{if(done3)return;done3=true;const h=box.querySelector('.hint');if(h)h.textContent='Айналдыру үшін сүйре';window.__heroInit();window.__parkInit();};
+let done3=false;const go3=()=>{if(done3)return;done3=true;window.__heroInit();window.__parkInit();};
 const T3=['https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js','https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js','https://unpkg.com/three@0.128.0/build/three.min.js'];
-const load3=i=>{if(window.THREE||i>=T3.length)return go3();const sc=document.createElement('script');sc.src=T3[i];sc.async=true;let fin=false;const tm=setTimeout(()=>{if(!fin){fin=true;load3(i+1)}},7000);sc.onload=()=>{if(fin){if(window.THREE&&!done3)go3();return}fin=true;clearTimeout(tm);go3()};sc.onerror=()=>{if(fin)return;fin=true;clearTimeout(tm);load3(i+1)};document.head.appendChild(sc)};
+const load3=i=>{if(window.THREE||i>=T3.length)return go3();const sc=document.createElement('script');sc.src=T3[i];sc.async=true;let fin=false;const tm=setTimeout(()=>{if(!fin){fin=true;load3(i+1)}},5000);sc.onload=()=>{if(fin){if(window.THREE&&!done3)go3();return}fin=true;clearTimeout(tm);go3()};sc.onerror=()=>{if(fin)return;fin=true;clearTimeout(tm);load3(i+1)};document.head.appendChild(sc)};
 load3(0);
 }
 </script>
